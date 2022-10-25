@@ -1,5 +1,3 @@
-# Unit Testing and Test Driven Dev(TDD) in DRF
-
 
 <p align="center">
 
