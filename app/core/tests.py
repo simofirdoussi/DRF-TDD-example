@@ -41,6 +41,6 @@ class CoreUnitTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
 
         books = Book.objects.all()
-        serializer = BookSerializer(books)
+        serializer = BookSerializer(books, many=True)
 
         self.assertEqual(res.data, serializer.data)
