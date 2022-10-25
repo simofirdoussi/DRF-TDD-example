@@ -11,7 +11,7 @@ from core.serializers import BookSerializer
 from core.models import Book
 
 
-BOOKS_URL = reverse('book:book-list')
+BOOKS_URL = reverse('core:book-list')
 
 
 def create_book(**params):
@@ -41,6 +41,6 @@ class CoreUnitTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
 
         books = Book.objects.all()
-        serializer = BookSerializer(books)
+        serializer = BookSerializer(books, many=True)
 
         self.assertEqual(res.data, serializer.data)
